@@ -4,6 +4,8 @@ Backend API for NusaSkillz, a gamified learning platform for students, teachers,
 
 Built with NestJS, TypeScript, Prisma, PostgreSQL, Supabase, JWT authentication, and Resend email delivery.
 
+**Live on Railway:** crack-be-setiawanhennie-glitch-production.up.railway.app
+
 ## Features
 
 - Student, teacher, admin, and super-admin roles
