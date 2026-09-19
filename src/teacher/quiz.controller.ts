@@ -21,9 +21,19 @@ export class TeacherQuizController {
     return this.quizService.listQuizzes(lessonId, req.user.school);
   }
 
+  @Get(':id')
+  getForEdit(@Req() req: any, @Param('id') id: string) {
+    return this.quizService.getQuizForEdit(id, req.user.school);
+  }
+
   @Delete(':id')
   remove(@Param('id') id: string) {
     return this.quizService.deleteQuiz(id);
+  }
+
+  @Patch(':id')
+  update(@Req() req: any, @Param('id') id: string, @Body() body: any) {
+    return this.quizService.updateQuiz(id, body, req.user.school);
   }
 }
 
@@ -52,13 +62,4 @@ export class PlayQuizController {
     return this.quizService.checkAnswer(id, body.questionId, body.answer);
   }
 
-  @Get(':id')
-  getForEdit(@Req() req: any, @Param('id') id: string) {
-    return this.quizService.getQuizForEdit(id, req.user.school);
-  }
-
-  @Patch(':id')
-  update(@Req() req: any, @Param('id') id: string, @Body() body: any) {
-    return this.quizService.updateQuiz(id, body, req.user.school);
-  }
 }
